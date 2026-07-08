@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>فارماکولوژی غدد تیروئید و داروهای مرتبط (جلسه ۶)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800&display=swap');
+
+    :root {
+      --primary:    #1a237e;
+      --secondary:  #283593;
+      --accent1:    #0277bd;
+      --accent2:    #00838f;
+      --accent3:    #6a1b9a;
+      --accent4:    #ad1457;
+      --accent5:    #e65100;
+      --bg:         #f0f4ff;
+      --card:       #ffffff;
+      --text:       #1a1a2e;
+      --muted:      #546e7a;
+      --border:     #c5cae9;
+      --green:      #1b5e20;
+      --greenlight: #e8f5e9;
+      --redlight:   #ffebee;
+      --red:        #b71c1c;
+      --yellowlight:#fff8e1;
+      --yellow:     #f57f17;
+      --bluelight:  #e3f2fd;
+      --blue:       #0d47a1;
+      --purplelight:#f3e5f5;
+      --purple:     #4a148c;
+      --teallight:  #e0f7fa;
+      --teal:       #006064;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Vazirmatn', Tahoma, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.9;
+      font-size: 15px;
+    }
+
+    /* ===== COVER ===== */
+    .cover {
+      background: linear-gradient(135deg, #1a237e 0%, #283593 40%, #0277bd 100%);
+      color: white;
+      text-align: center;
+      padding: 60px 30px 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: -80px;
+      width: 300px; height: 300px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: -60px;
+      width: 250px; height: 250px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+    .cover .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 50px;
+      padding: 6px 20px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+    }
+    .cover h1 {
+      font-size: 2.4em;
+      font-weight: 800;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .cover h2 {
+      font-size: 1.3em;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+    .cover .meta {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .cover .meta-item {
+      background: rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 10px 20px;
+      font-size: 13px;
+    }
+    .cover .meta-item span { display: block; font-weight: 700; font-size: 15px; margin-top: 3px; }
+
+    /* ===== TOC ===== */
+    .toc {
+      background: white;
+      margin: 30px auto;
+      max-width: 900px;
+      border-radius: 16px;
+      padding: 30px 35px;
+      box-shadow: 0 4px 20px rgba(26,35,126,0.08);
+      border-right: 5px solid var(--primary);
+    }
+    .toc h3 {
+      font-size: 1.2em;
+      color: var(--primary);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .toc ol {
+      padding-right: 20px;
+    }
+    .toc ol li {
+      padding: 5px 0;
+      color: var(--accent1);
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .toc ol li a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .toc ol li a:hover { color: var(--primary); }
+
+    /* ===== MAIN WRAPPER ===== */
+    .main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ===== SECTION HEADER ===== */
+    .section-header {
+      border-radius: 14px;
+      padding: 18px 25px;
+      margin: 40px 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-size: 1.25em;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+    .section-header .icon {
+      font-size: 1.5em;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .sh-blue   { background: linear-gradient(135deg, #1565c0, #0288d1); }
+    .sh-purple { background: linear-gradient(135deg, #6a1b9a, #ab47bc); }
+    .sh-teal   { background: linear-gradient(135deg, #00695c, #26a69a); }
+    .sh-red    { background: linear-gradient(135deg, #b71c1c, #ef5350); }
+    .sh-orange { background: linear-gradient(135deg, #e65100, #ff7043); }
+    .sh-green  { background: linear-gradient(135deg, #1b5e20, #43a047); }
+    .sh-indigo { background: linear-gradient(135deg, #283593, #5c6bc0); }
+    .sh-pink   { background: linear-gradient(135deg, #880e4f, #e91e63); }
+    .sh-brown  { background: linear-gradient(135deg, #4e342e, #8d6e63); }
+    .sh-cyan   { background: linear-gradient(135deg, #006064, #00acc1); }
+
+    /* ===== SUBSECTION ===== */
+    .subsection {
+      background: white;
+      border-radius: 12px;
+      padding: 22px 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border-top: 3px solid transparent;
+    }
+    .sub-blue   { border-top-color: #1565c0; }
+    .sub-purple { border-top-color: #6a1b9a; }
+    .sub-teal   { border-top-color: #00695c; }
+    .sub-red    { border-top-color: #b71c1c; }
+    .sub-orange { border-top-color: #e65100; }
+    .sub-green  { border-top-color: #1b5e20; }
+    .sub-indigo { border-top-color: #283593; }
+    .sub-pink   { border-top-color: #880e4f; }
+    .sub-brown  { border-top-color: #4e342e; }
+    .sub-cyan   { border-top-color: #006064; }
+
+    .subsection h4 {
+      font-size: 1.05em;
+      font-weight: 700;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px dashed var(--border);
+      color: var(--secondary);
+    }
+
+    /* ===== INFO BOX ===== */
+    .infobox {
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      display: flex;
+      gap: 12px;
+      font-size: 14px;
+    }
+    .infobox .ib-icon { font-size: 1.3em; flex-shrink: 0; margin-top: 1px; }
+    .ib-blue   { background: var(--bluelight);   border-right: 4px solid #1565c0; color: #0d1b5e; }
+    .ib-green  { background: var(--greenlight);  border-right: 4px solid #2e7d32; color: #1b3a1f; }
+    .ib-red    { background: var(--redlight);    border-right: 4px solid #c62828; color: #5c0000; }
+    .ib-yellow { background: var(--yellowlight); border-right: 4px solid #f9a825; color: #4a2c00; }
+    .ib-purple { background: var(--purplelight); border-right: 4px solid #6a1b9a; color: #2d0048; }
+    .ib-teal   { background: var(--teallight);   border-right: 4px solid #006064; color: #003033; }
+
+    /* ===== LIST STYLES ===== */
+    .list-styled {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0;
+    }
+    .list-styled li {
+      padding: 5px 0 5px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 14px;
+      border-bottom: 1px dotted #e8eaf6;
+    }
+    .list-styled li:last-child { border-bottom: none; }
+    .list-styled li::before {
+      content: '◈';
+      color: var(--accent1);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .list-styled.green li::before  { color: #2e7d32; }
+    .list-styled.red li::before    { color: #c62828; }
+    .list-styled.purple li::before { color: #6a1b9a; }
+    .list-styled.teal li::before   { color: #006064; }
+    .list-styled.orange li::before { color: #e65100; }
+
+    /* ===== TAGS / PILLS ===== */
+    .tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      margin: 2px 2px;
+    }
+    .tag-blue   { background: #e3f2fd; color: #0d47a1; }
+    .tag-red    { background: #ffebee; color: #b71c1c; }
+    .tag-green  { background: #e8f5e9; color: #1b5e20; }
+    .tag-purple { background: #f3e5f5; color: #4a148c; }
+    .tag-orange { background: #fff3e0; color: #e65100; }
+    .tag-teal   { background: #e0f7fa; color: #006064; }
+    .tag-yellow { background: #fff8e1; color: #f57f17; }
+    .tag-pink   { background: #fce4ec; color: #880e4f; }
+
+    /* ===== TABLE ===== */
+    .table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 10px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+    table thead tr {
+      background: var(--primary);
+      color: white;
+    }
+    table thead th {
+      padding: 12px 14px;
+      text-align: right;
+      font-weight: 700;
+    }
+    table tbody tr:nth-child(even) { background: #f5f7ff; }
+    table tbody tr:hover { background: #e8eaf6; }
+    table tbody td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e0e4f8;
+      vertical-align: top;
+    }
+    table tbody tr:last-child td { border-bottom: none; }
+
+    /* ===== HIGHLIGHT BADGE ===== */
+    .hbadge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: linear-gradient(135deg, #fff176, #ffee58);
+      color: #4a2c00;
+      border: 1px solid #f9a825;
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* ===== GRID 2-COL ===== */
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 14px 0;
+    }
+    @media(max-width:640px){ .grid2 { grid-template-columns: 1fr; } }
+
+    /* ===== MINI CARD ===== */
+    .mini-card {
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 13.5px;
+    }
+    .mc-blue   { background: #e8eaf6; border-right: 3px solid #3949ab; }
+    .mc-green  { background: #e8f5e9; border-right: 3px solid #388e3c; }
+    .mc-red    { background: #ffebee; border-right: 3px solid #e53935; }
+    .mc-purple { background: #f3e5f5; border-right: 3px solid #8e24aa; }
+    .mc-orange { background: #fff3e0; border-right: 3px solid #f4511e; }
+    .mc-teal   { background: #e0f7fa; border-right: 3px solid #00838f; }
+    .mini-card h5 { font-weight: 700; margin-bottom: 8px; font-size: 14px; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--primary);
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      padding: 25px;
+      font-size: 13px;
+      margin-top: 60px;
+    }
+
+    strong.em { color: #b71c1c; }
+    strong.em2 { color: #1565c0; }
+    strong.em3 { color: #2e7d32; }
+    strong.em4 { color: #6a1b9a; }
+
+    /* ===== رفع باگ تراز خطوط و ازهم‌گسیختگی متن (مخصوص پلتفرم‌های موبایل و Safari) ===== */
+    .li-content { flex: 1; display: inline; line-height: 1.8; color: var(--text); }
+    .kv-row { padding: 8px 0; font-size: 14px; border-bottom: 1px dotted #e0e4f8; line-height: 1.8; }
+    .kv-key { font-weight: 700; color: var(--secondary); display: inline; margin-left: 6px; }
+    .kv-value { color: var(--text); display: inline; }
+
+    /* ===== سیستم تعاملی یادداشت‌های درون‌متنی مینیاتوری ===== */
+    .note-marker {
+      background-color: #ffd54f !important;
+      border: 1px solid #ffb300 !important;
+      color: #000 !important;
+      border-radius: 4px !important;
+      cursor: pointer !important;
+      padding: 1px 4px !important;
+      margin: 0 3px !important;
+      font-size: 11px !important;
+      user-select: none !important;
+      display: inline-block !important;
+      vertical-align: middle !important;
+      font-weight: bold !important;
+      position: relative;
+      animation: notePulse 2s infinite;
+    }
+    @keyframes notePulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    /* کدهای CSS خالص جهت سازگاری و نمایش یادداشت در نمایشگر فایل آفلاین iOS */
+    .note-tooltip {
+      display: none;
+      position: absolute;
+      bottom: 125%;
+      right: 0;
+      background: #37474f;
+      color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      min-width: 180px;
+      max-width: 250px;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      white-space: normal;
+      line-height: 1.5;
+      font-weight: normal;
+      text-align: right;
+    }
+    .note-marker:hover .note-tooltip, .note-marker:active .note-tooltip {
+      display: block !important;
+    }
+
+    /* ===== ساختار پنجره مودال مدیریت یادداشت‌ها ===== */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(26, 35, 126, 0.5);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      direction: rtl;
+    }
+    .modal-card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      border-top: 5px solid var(--primary);
+    }
+    .modal-card h4 {
+      margin-bottom: 14px;
+      color: var(--primary);
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .modal-textarea {
+      width: 100%;
+      height: 120px;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: inherit;
+      resize: none;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    .btn {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      font-size: 13px;
+    }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-danger { background: var(--red); color: white; }
+    .btn-secondary { background: #eceff1; color: #37474f; }
+
+    /* ===== نوار ابزار تعاملی انتهای صفحه ===== */
+    #highlight-panel {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+      border-radius: 50px;
+      padding: 10px 20px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid var(--primary);
+      direction: rtl;
+      width: max-content;
+      max-width: 95%;
+    }
+    #highlight-panel span {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .hl-btn {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+    .hl-btn:hover { transform: scale(1.15); }
+    .hl-btn-yellow { background-color: #fff59d; }
+    .hl-btn-green  { background-color: #c8e6c9; }
+    .hl-btn-blue   { background-color: #bbdefb; }
+    .hl-btn-pink   { background-color: #f8bbd0; }
+    .panel-action-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .panel-action-btn-red { background: var(--red); }
+  </style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="badge">فارماکولوژی2</div>
+  <h1>داروهای مؤثر بر تیروئید و غدد فوق تیروئیدی</h1>
+  <div class="meta">
+    <div class="meta-item">جلسه<span>6</span></div>
+    <div class="meta-item">تهییه کننده<span>احمدرضا عبداللهی پور</span></div>
+    <div class="meta-item">برای دریافت فایل های بیشتر به بات تلگرامی مراجعه کنید
+                        
+<a href="https://t.me/Medical_house_bot" target="_blank" style="
+    display: inline-block;
+    padding: 5px 12px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Tahoma, sans-serif;
+    font-weight: bold;">
+    🤖 شروع گفتگو با بات
+</a></div>
+
+  </div>
+</div>
+
+<div class="toc">
+  <h3>📋 فهرست مطالب درسنامه</h3>
+  <ol>
+    <li><a href="#sec-physiology">۱. فیزیولوژی و محور هورمونی تنظیم تیروئید</a></li>
+    <li><a href="#sec-hypo-symptoms">۲. سندرم بالینی و بیوشیمیایی کم‌کاری تیروئید (Hypothyroidism)</a></li>
+    <li><a href="#sec-subclinical">۳. هایپوتیروئیدیسم ساب‌کلینیکال (Subclinical)</a></li>
+    <li><a href="#sec-levothyroxine">۴. درمان دارویی با لووتیروکسین (Levothyroxine)</a></li>
+    <li><a href="#sec-liothyronine">۵. داروی لیوتیرونین (Liothyronine / T3)</a></li>
+    <li><a href="#sec-infants">۶. تأثیر استروژن، بارداری و هایپوتیروئیدی مادرزادی</a></li>
+    <li><a href="#sec-hyper-intro">۷. پرکاری تیروئید (Hyperthyroidism) و بیماری گریوز (Graves' Disease)</a></li>
+    <li><a href="#sec-treatment-beta">۸. رویکرد درمانی اول: بتابلاکرها (Beta-blockers)</a></li>
+    <li><a href="#sec-thionamides">۹. رویکرد درمانی دوم: داروهای ضدتیروئید تیونامید (Thionamides)</a></li>
+    <li><a href="#sec-iodine">۱۰. کاربرد ترکیبات ید (Iodine) و داروهای کمکی و تکمیلی در هایپرتیروئیدیسم</a></li>
+  </ol>
+</div>
+
+<div class="main">
+
+  <!-- ===================== SECTION 1 ===================== -->
+  <div class="section-header sh-blue" id="sec-physiology">
+    <div class="icon">🔵</div>
+    <span>۱. فیزیولوژی و محور هورمونی تنظیم تیروئید</span>
+  </div>
+
+  <div class="subsection sub-blue">
+    <h4>مکانیسم بازخورد غده تیروئید</h4>
+    <p>
+      محور بازخوردی تنظیم هورمون‌های تیروئیدی از <strong class="em2">هیپوتالاموس</strong> آغاز می‌شود. هیپوتالاموس با ترشح هورمون آزادکننده تیروتروپین (<strong class="em2">TRH</strong>) بر سلول‌های هیپوفیز اثر گذاشته و موجب ترشح هورمون محرک تیروئید (<strong class="em2">TSH</strong>) می‌گردد. هورمون TSH به نوبه خود بر غده تیروئید اثر کرده و ترشح دو هورمون اصلی تیروئیدی یعنی <strong class="em">T3 (تری‌یدوتیرونین)</strong> و <strong class="em">T4 (تیروکسین)</strong> را فعال می‌سازد.
+    </p>
+
+    <div class="infobox ib-blue">
+      <span class="ib-icon">ℹ️</span>
+      <div>
+        <strong>سیستم بازخورد منفی (Negative Feedback):</strong> افزایش مقدار هورمون‌های T3 و T4 در گردش خون، سبب کاهش ترشح هورمون‌های اولیه (TRH و TSH) از هیپوتالاموس و هیپوفیز می‌گردد و بالعکس کاهش آنها ترشح هورمون‌های فوق را افزایش می‌دهد.
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="mini-card mc-blue">
+        <h5>فرآورده غیرفعال Reverse T3</h5>
+        <p>غده تیروئید فرآورده دیگری به نام <strong class="em">rT3 (Reverse T3)</strong> تولید می‌کند که یک یون ید کمتر از T4 دارد. این ترکیب در آزمایشگاه قابل اندازه‌گیری است؛ اما به دلیل نداشتن کارکرد زیست‌شناختی، اهمیت بالینی چندانی ندارد.</p>
+      </div>
+      <div class="mini-card mc-teal">
+        <h5>ذخیره تیروگلوبولین و کسر آزاد (Free)</h5>
+        <p>هورمون‌های تیروئیدی به صورت آزاد در بدن رها نیستند، بلکه درون ساختار گلیکوپروتئینی بزرگی به نام <strong class="em4">تیروگلوبولین (Thyroglobulin)</strong> نگهداری می‌شوند. کسر دارای کارکرد زیست‌شناختی باید از تیروگلوبولین جدا شود که برای نشان دادن آن از پسوند <strong class="em2">Free</strong> (مثل Free T4) استفاده می‌گردد.</p>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>شاخص مقایسه‌ای</th>
+            <th>هورمون T4 (تیروکسین)</th>
+            <th>هورمون T3 (تری‌یدوتیرونین)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>میزان ترشح از غده تیروئید</strong></td>
+            <td>هورمون اصلی ترشح‌شده از تیروئید (بخش اعظم)</td>
+            <td>به میزان بسیار کمتر مستقیماً ترشح می‌شود.</td>
+          </tr>
+          <tr>
+            <td><strong>قدرت اثر (Potency)</strong></td>
+            <td>کمتر فعال است؛ در بافت‌های محیطی به T3 تبدیل می‌شود.</td>
+            <td><strong class="em">چهار برابر (4x)</strong> پوتنت‌تر و فعال‌تر از T4 است.</td>
+          </tr>
+          <tr>
+            <td><strong>نیمه عمر زیستی (Half-life)</strong></td>
+            <td><strong class="em2">۷ روز</strong></td>
+            <td><strong class="em">۱.۵ روز</strong></td>
+          </tr>
+          <tr>
+            <td><strong>معادل دارویی سنتتیک</strong></td>
+            <td>Levothyroxine (نیمه‌عمر ۷ روز)</td>
+            <td>Liothyronine (نیمه‌عمر ۱.۵ روز)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="infobox ib-yellow">
+      <span class="ib-icon">⚠️</span>
+      <div>
+        <strong>تبدیل محیطی T4 به T3:</strong> این فرآیند حیاتی به شدت تحت تأثیر بیماری‌های مختلف، وضعیت هورمونی و وضعیت تغذیه‌ای بیمار قرار دارد و اختلال در هر یک از این عوامل می‌تواند فرآیند تبدیل محیطی را مختل کند.
+      </div>
+    </div>
+
+    <h4>پایش آزمایشگاهی TSH</h4>
+    <p>
+      مهم‌ترین عامل تشخیصی عملکرد تیروئید در آزمایشگاه، اندازه‌گیری سطح <strong class="em2">TSH</strong> است.
+    </p>
+    <div class="kv-row">
+      <span class="kv-key">محدوده طبیعی معمول TSH:</span>
+      <span class="kv-value">بین <strong>۰٫۵ تا ۵ IU/Lit</strong> (البته بر اساس استانداردهای هر آزمایشگاه ممکن است متغیر باشد).</span>
+    </div>
+    <div class="kv-row">
+      <span class="kv-key">نوسانات شبانه‌روزی (Diurnal):</span>
+      <span class="kv-value">ترشح TSH به صورت پالسی انجام می‌شود. اگر نمونه‌گیری در شب انجام شود، مقدار آن می‌تواند <strong class="em">۵۰ تا ۱۰۰ درصد (۱.۵ تا ۲ برابر)</strong> بیشتر از صبح باشد. بنابراین آزمایش‌ها همواره باید در یک زمان ثابت از شبانه‌روز تکرار و مقایسه شوند.</span>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 2 ===================== -->
+  <div class="section-header sh-purple" id="sec-hypo-symptoms">
+    <div class="icon">🟣</div>
+    <span>۲. سندرم بالینی و بیوشیمیایی کم‌کاری تیروئید (Hypothyroidism)</span>
+  </div>
+
+  <div class="subsection sub-purple">
+    <h4>تعریف بیماری و نقش عنصر حیاتی ید</h4>
+    <p>
+      کم‌کاری تیروئید یک سندرم کلینیکال و بیوشیمیایی (Biochemical) است. یعنی پزشک ابتدا باید بر اساس نشانه‌های بالینی به بیماری مشکوک شده و سپس با بررسی فاکتورهای آزمایشگاهی خون، تشخیص قطعی را ثبت نماید.
+    </p>
+
+    <div class="infobox ib-green">
+      <span class="ib-icon">🍃</span>
+      <div>
+        <strong>منابع تامین عنصر ید (Iodine):</strong> عنصر ید یکی از مهم‌ترین مواد اولیه در ارگانیفیکاسیون و سنتز هورمون‌های تیروئیدی است. تنها منبع آن خارجی (اگزوژن) بوده و از طریق غذاهای دریایی، لبنیات و سبزیجات تأمین می‌شود. در نمک‌های یددار استاندارد، در هر گرم نمک، حدود <strong class="em3">۴۵ تا ۸۰ میکروگرم ید</strong> وجود دارد.
+      </div>
+    </div>
+
+    <h4>تظاهرات بالینی کم‌کاری تیروئید</h4>
+    <p>علائم ناشی از کاهش نرخ متابولیسم بدن (Metabolic Rate) عبارتند از:</p>
+    <ul class="list-styled purple">
+      <li><span class="li-content"><strong>علائم تیپیکال بالینی:</strong> خشکی شدید پوست، افزایش غیرقابل توجیه وزن، تاخیر در بهبود زخم‌ها، عدم تحمل سرما، یبوست مداوم.</span></li>
+      <li><span class="li-content"><strong>علائم غیراختصاصی:</strong> ضعف عمومی بدن، افسردگی، بی‌حوصلگی و از دست دادن انگیزه (این موارد به دلیل هم‌پوشانی با بیماری‌های اعصاب و روان، غیراختصاصی قلمداد می‌شوند).</span></li>
+      <li><span class="li-content"><strong>علائم کم‌تکرار:</strong> دردهای عضلانی، گرفتگی‌های شدید عضلانی، منوراژی (خونریزی شدید قاعدگی در خانم‌ها) و ناباروری.</span></li>
+    </ul>
+
+    <div class="infobox ib-red">
+      <span class="ib-icon">🚨</span>
+      <div>
+        <strong>نکته مهم بالینی:</strong> تست عملکرد تیروئید به دلیل شیوع بالای اختلالات تیروئیدی در بیماران دچار مشکل باروری، همواره جزو نخستین تست‌های روتین بررسی علل ناباروری در خانم‌ها محسوب می‌شود.
+      </div>
+    </div>
+
+    <div class="mini-card mc-purple">
+      <h5>تشخیص بیوشیمیایی کم‌کاری تیروئید آشکار</h5>
+      <p>زمانی که سطح هورمون <strong class="em">TSH بالاتر از محدوده طبیعی (بالای ۵ IU/Lit)</strong> قرار گیرد و همزمان سطح هورمون‌های آزاد تیروئیدی (T3 و T4) <strong class="em">پایین‌تر از محدوده نرمال</strong> باشد، بیمار در فاز هایپوتیروئیدیسم آشکار قرار دارد.</p>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 3 ===================== -->
+  <div class="section-header sh-teal" id="sec-subclinical">
+    <div class="icon">🟢</div>
+    <span>۳. هایپوتیروئیدیسم ساب‌کلینیکال (Subclinical Hypothyroidism)</span>
+  </div>
+
+  <div class="subsection sub-teal">
+    <h4>تعریف بیوشیمیایی ساب‌کلینیکال</h4>
+    <p>
+      در وضعیت ساب‌کلینیکال، سطح <strong class="em">TSH افزایش یافته است</strong> اما هورمون‌های تیروئیدی آزاد در خون (Free T4 و Free T3) هنوز در <strong class="em3">محدوده نرمال</strong> قرار دارند. در واقع، محور هیپوتالاموس-هیپوفیز-تیروئید با افزایش ترشح TSH توانسته است سطح هورمون‌ها را در محدوده فیزیولوژیک نگه دارد.
+    </p>
+
+    <div class="infobox ib-yellow">
+      <span class="ib-icon">⚡</span>
+      <div>
+        <strong>تصمیم‌گیری برای شروع درمان:</strong> در موارد ساب‌کلینیکال، بلافاصله دارو تجویز نمی‌شود. پزشک با ارزیابی شرایط بالینی و بیماری‌های زمینه‌ای تصمیم می‌گیرد که درمان را آغاز کند یا اینکه صبر کرده تا بیمار وارد فاز هایپوتیروئیدیسم آشکار شود.
+      </div>
+    </div>
+
+    <h4>تعادل در بیماران قلبی و سالمندان</h4>
+    <p>
+      هدف غایی درمان، رساندن بیمار به وضعیت طبیعی هورمونی (<strong class="em2">Euthyroid</strong>) است. با این حال در برخی شرایط خاص نظیر بیماری‌های قلبی-عروقی، امکان ایجاد وضعیت کاملاً یوتیروئید وجود ندارد.
+    </p>
+    <ul class="list-styled teal">
+      <li><span class="li-content">هورمون‌های تیروئیدی با افزایش نرخ متابولیک، عملکرد سیستم قلبی-عروقی را تشدید می‌کنند.</span></li>
+      <li><span class="li-content">در بیماران مبتلا به <strong class="em">نارسایی قلبی، آنژین صدری، آریتمی قلبی</strong> یا افراد بسیار سالمند، افزایش ناگهانی یا بیش از حد دوز هورمون می‌تواند وضعیت قلبی بیمار را وخیم‌تر کند.</span></li>
+      <li><span class="li-content">در این دسته از بیماران، تیم درمان ناچار است بین درمان کامل تیروئید و کنترل پایداری قلبی بیمار تعادل برقرار نموده و به سطوح پایین‌تر دوز بسنده کند.</span></li>
+    </ul>
+  </div>
+
+  <!-- ===================== SECTION 4 ===================== -->
+  <div class="section-header sh-indigo" id="sec-levothyroxine">
+    <div class="icon">🔵</div>
+    <span>۴. درمان دارویی با لووتیروکسین (Levothyroxine / T4)</span>
+  </div>
+
+  <div class="subsection sub-indigo">
+    <h4>اصول فارماکوکینتیک و مصرف داروی لووتیروکسین</h4>
+    <p>
+      لووتیروکسین شکل دارویی هورمون سنتتیک T4 است و داروی استاندارد و خط اول درمان کم‌کاری تیروئید به شمار می‌رود.
+    </p>
+    <div class="kv-row">
+      <span class="kv-key">میزان جذب گوارشی:</span>
+      <span class="kv-value">حدود <strong class="em3">۸۰ درصد (80%)</strong> در شرایط ناشتا (Fasting).</span>
+    </div>
+    <div class="kv-row">
+      <span class="kv-key">تعریف دقیق شرایط ناشتا:</span>
+      <span class="kv-value">بیمار باید حداقل <strong class="em">یک ساعت پیش از اولین وعده غذایی (صبحانه)</strong> دارو را مصرف کرده باشد و رعایت این فاصله برای جذب بهینه دارو بسیار حیاتی است.</span>
+    </div>
+
+    <div class="grid2" style="margin-top: 15px;">
+      <div class="mini-card mc-orange">
+        <h5>راهکارهای جایگزین برای بیماران فاقد همکاری</h5>
+        <p>اگر بیمار به هیچ عنوان قادر به رعایت ناشتایی صبحگاهی نباشد، دو رویکرد وجود دارد:</p>
+        <ul class="list-styled orange">
+          <li><span class="li-content"><strong>مصرف دوز یکجای هفتگی:</strong> به علت افزایش شدید ریسک عوارض حاد قلبی-عروقی، این روش با مخالفت‌های بسیاری همراه است.</span></li>
+          <li><span class="li-content"><strong>مصرف شبانه دارو (Bedtime):</strong> در صورتی که بیمار فاصله مناسب با وعده عصرانه یا شام را رعایت کند و معده خالی باشد، این روش کاملاً بدون مشکل و موثر است.</span></li>
+        </ul>
+      </div>
+      <div class="mini-card mc-red">
+        <h5>تداخلات دارویی مانع جذب لووتیروکسین</h5>
+        <p>داروهای زیر با مهار اسید معده یا اتصال فیزیکی به لووتیروکسین، مانع جذب مناسب آن می‌شوند:</p>
+        <ul class="list-styled red">
+          <li><span class="li-content">مهارکننده‌های پمپ پروتون (<strong class="em">PPIها</strong> مانند امپرازول و پنتوپرازول)</span></li>
+          <li><span class="li-content">قرص‌های <strong class="em">کلسیم کربنات</strong></span></li>
+          <li><span class="li-content">فرآورده‌های حاوی <strong class="em">آهن</strong></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="infobox ib-red">
+      <span class="ib-icon">🚨</span>
+      <div>
+        <strong>مکانیسم تداخل با PPIها:</strong> تداخل لووتیروکسین با PPI صرفاً یک مهار فیزیکی ساده نیست؛ بلکه با مهار پمپ‌های هیدروژن معده و کاهش اسید، pH معده بالا رفته و در غیاب اسیدیته کافی، انحلال و جذب لووتیروکسین به شدت افت می‌کند. در صورت نیاز به مصرف همزمان، باید دو بازه ناشتایی مجزا (مثلاً یکی صبح و دیگری شب) تعریف گردد.
+      </div>
+    </div>
+
+    <h4>قوانین تعویض برند تجاری لووتیروکسین</h4>
+    <p>
+      به دلیل تفاوت در فراهمی زیستی برندهای مختلف دارویی، تا حد امکان نباید برند تجاری مصرفی بیمار تعویض شود. در صورت اجبار به تعویض برند (به دلیل مسافرت، مهاجرت یا توقف تولید داروی قبلی):
+    </p>
+    <div class="hbadge">🔬 توصیه بالینی: ۶ تا ۷ هفته پس از مصرف برند جدید، پایش مجدد تست‌های تیروئیدی الزامی است.</div>
+
+    <h4>محاسبه دوز دقیق دارویی</h4>
+    <div class="kv-row">
+      <span class="kv-key">دوز استاندارد بزرگسالان سالم:</span>
+      <span class="kv-value"><strong class="em3">۱.۶ میکروگرم به ازای هر کیلوگرم وزن بدن در روز (1.6 mcg/kg/day)</strong>.</span>
+    </div>
+    <div class="kv-row">
+      <span class="kv-key">مثال محاسباتی بالینی:</span>
+      <span class="kv-value">برای یک فرد جوان و سالم با وزن ۶۸ کیلوگرم، قرص لووتیروکسین با دوز <strong class="em2">۱۰۰ میکروگرم روزانه</strong> تجویز می‌شود. (قرص‌های موجود در بازار عمدتاً به صورت ۵۰ و ۱۰۰ میکروگرمی عرضه می‌شوند).</span>
+    </div>
+    <div class="kv-row">
+      <span class="kv-key">دوز شروع در بیماران قلبی و سالمندان:</span>
+      <span class="kv-value">باید با دوز بسیار پایین‌تر (نصف یا یک چهارم دوز استاندارد) شروع شود تا عوارض کمتری متوجه سیستم قلبی گردد.</span>
+    </div>
+
+    <div class="grid2" style="margin-top: 15px;">
+      <div class="mini-card mc-blue">
+        <h5>عوامل تعیین‌کننده دوز دارویی</h5>
+        <ul class="list-styled green">
+          <li><span class="li-content"><strong>میزان هورمون TSH:</strong> هر چه سطح TSH بالاتر باشد، نیاز به دوز بیشتری از لووتیروکسین خواهد بود.</span></li>
+          <li><span class="li-content"><strong>بافت فعال باقیمانده تیروئید:</strong> در صورت وجود بافت تیروئید فعال، بدن خود مقداری هورمون ترشح کرده و دوز تجویزی دارو کاهش می‌یابد.</span></li>
+        </ul>
+      </div>
+      <div class="mini-card mc-teal">
+        <h5>دوره پایش و افزایش دوز</h5>
+        <p>بهبود علائم بالینی معمولاً از هفته دوم آغاز شده اما پایداری TSH سرم (Steady-state) حداقل <strong class="em">۶ هفته</strong> به طول می‌انجامد.</p>
+        <ul class="list-styled teal">
+          <li><span class="li-content">سنجش مجدد آزمایش TSH باید دقیقاً <strong class="em2">۶ هفته بعد</strong> از شروع درمان انجام شود.</span></li>
+          <li><span class="li-content">در صورت بالا ماندن TSH، می‌توان دوز T4 را روزانه <strong class="em">۱۲ تا ۲۵ میکروگرم</strong> افزایش داد و دوباره ۶ هفته بعد ارزیابی کرد.</span></li>
+          <li><span class="li-content">پس از رسیدن به وضعیت یوتیروئید، فواصل چکاپ‌های بعدی به <strong class="em3">۶ ماه تا یک سال</strong> افزایش می‌یابد.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 5 ===================== -->
+  <div class="section-header sh-red" id="sec-liothyronine">
+    <div class="icon">🔴</div>
+    <span>۵. داروی لیوتیرونین (Liothyronine / T3)</span>
+  </div>
+
+  <div class="subsection sub-red">
+    <h4>ویژگی‌های فارماکولوژیک لیوتیرونین</h4>
+    <p>
+      لیوتیرونین شکل دارویی هورمون تیروئیدی فعال T3 است که در شرایط محدودی برای درمان کم‌کاری تیروئید تجویز می‌گردد.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>شاخص ارزیابی</th>
+            <th>داروی لیوتیرونین (T3)</th>
+            <th>داروی لووتیروکسین (T4)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>سرعت جذب گوارشی</strong></td>
+            <td>بسیار سریع‌تر از T4</td>
+            <td>متوسط</td>
+          </tr>
+          <tr>
+            <td><strong>طول اثر و نیمه‌عمر</strong></td>
+            <td>بسیار کوتاه‌تر (نیاز به مصرف چند بار در روز)</td>
+            <td>طولانی (مصرف یک‌بار در روز کافی است)</td>
+          </tr>
+          <tr>
+            <td><strong>قیمت دارویی</strong></td>
+            <td>گران‌قیمت</td>
+            <td>ارزان و در دسترس</td>
+          </tr>
+          <tr>
+            <td><strong>خطر بروز عوارض قلبی</strong></td>
+            <td><strong class="em">بسیار بالاتر</strong></td>
+            <td>کمتر و قابل کنترل‌تر</td>
+          </tr>
+          <tr>
+            <td><strong>امکان پایش درمانی (Monitoring)</strong></td>
+            <td><strong class="em">بسیار دشوار</strong>؛ زیرا با پایش TSH و Free T4 همخوانی دقیقی ایجاد نمی‌کند.</td>
+            <td>بسیار ساده و استاندارد</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="infobox ib-yellow">
+      <span class="ib-icon">⚠️</span>
+      <div>
+        <strong>نتیجه‌گیری بالینی در طب سالمندان:</strong> در بیماران سالمند یا مبتلا به نارسایی قلبی و کرونری، برای کاهش نرخ متابولیسم پایه سیستم قلبی و پیشگیری از ایسکمی قلب، مصرف لووتیروکسین با دوز آغازین <strong class="em">۲۵ میکروگرم در روز</strong> ارجحیت مطلق دارد و دوز دارو باید هر ۴ تا ۶ هفته به تدریج افزایش یابد.
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 6 ===================== -->
+  <div class="section-header sh-orange" id="sec-infants">
+    <div class="icon">🟠</div>
+    <span>۶. تأثیر استروژن، بارداری و هایپوتیروئیدی مادرزادی</span>
+  </div>
+
+  <div class="subsection sub-orange">
+    <h4>تاثیر هورمون استروژن بر دوز درمانی</h4>
+    <p>
+      مبنای فیزیولوژیک کارکرد هورمون‌های تیروئیدی، سطح هورمون‌های آزاد (Free) است و نه فرم متصل به پروتئین‌های ناقل.
+    </p>
+    <ul class="list-styled orange">
+      <li><span class="li-content"><strong>در خانم‌های باردار:</strong> سطح استروژن خون بسیار بالا می‌رود. استروژن سبب افزایش تولید پروتئین ناقل تیروئید (<strong class="em2">TBG</strong>) در کبد می‌شود. با افزایش غلظت TBG، هورمون‌های تیروئیدی بیشتری به پروتئین متصل شده و کسر هورمون آزاد کاهش می‌یابد. بنابراین در بارداری، <strong class="em">نیاز به افزایش دوز لووتیروکسین</strong> وجود دارد.</span></li>
+      <li><span class="li-content"><strong>مصرف قرص‌های ضدبارداری (OCP):</strong> اگر صرفاً برای پیشگیری از بارداری باشد، معمولاً نیازی به تعدیل دوز نیست؛ اما اگر مصرف OCP برای مقاصد درمانی و جبران کمبود شدید استروژن تجویز شده باشد، افزایش دوز لووتیروکسین ضروری است.</span></li>
+    </ul>
+
+    <h4>هایپوتیروئیدی مادرزادی در نوزادان</h4>
+    <p>
+      به دلیل نقش حیاتی هورمون تیروئید در رشد و تکامل مغزی نوزاد، عدم کنترل کم‌کاری تیروئید نوزادی منجر به عقب‌ماندگی ذهنی غیرقابل بازگشت می‌گردد. یکی از اولین نشانه‌های قابل مشاهده در نوزاد، <strong class="em">ضعف در مکیدن سینه مادر یا شیشه شیر</strong> است.
+    </p>
+
+    <div class="kv-row">
+      <span class="kv-key">بهترین زمان غربالگری:</span>
+      <span class="kv-value">طی هفته‌های اول تولد و <strong class="em">حداکثر تا سن ۴۵ روزگی</strong>.</span>
+    </div>
+    <div class="kv-row">
+      <span class="kv-key">دوز نوزادی لووتیروکسین:</span>
+      <span class="kv-value">بسیار بالاتر از بزرگسالان و معادل <strong class="em3">۱۰ تا ۱۵ میکروگرم به ازای هر کیلوگرم وزن در روز (10-15 µg/kg/day)</strong> است.</span>
+    </div>
+
+    <div class="infobox ib-red">
+      <span class="ib-icon">🚨</span>
+      <div>
+        <strong>روش صحیح تجویز قرص به نوزاد:</strong> قرص باید به طور کامل در آب جوشیده سرد شده حل گردد. <strong class="em">به هیچ عنوان</strong> نباید قرص لووتیروکسین را با شیر مادر یا شیر خشک مخلوط نمود؛ زیرا کلسیم موجود در شیر مانع جذب دارو می‌شود.
+      </div>
+    </div>
+
+    <p>
+      <strong>پروتکل ارزیابی مجدد در سه سالگی:</strong> درمان معمولاً تا سن ۳ سالگی به طور پیوسته ادامه می‌یابد. در سن سه سالگی، دارو را به مدت <strong class="em">یک هفته</strong> قطع می‌کنند تا نیمه‌عمر دارو سپری شده و آزمایش تیروئید بدون اثر کاذب دارویی سنجیده شود. در صورتی که آزمایش تیروئید پس از قطع دارو طبیعی باشد، درمان متوقف می‌شود. تقریباً <strong class="em3">۳۰ درصد</strong> نوزادان مبتلا، شانس بازگشت به وضعیت کاملاً طبیعی را دارند.
+    </p>
+  </div>
+
+  <!-- ===================== SECTION 7 ===================== -->
+  <div class="section-header sh-green" id="sec-hyper-intro">
+    <div class="icon">🟢</div>
+    <span>۷. پرکاری تیروئید (Hyperthyroidism) و بیماری گریوز (Graves' Disease)</span>
+  </div>
+
+  <div class="subsection sub-green">
+    <h4>تعریف بیماری و پاتوفیزیولوژی گریوز</h4>
+    <p>
+      هایپرتیروئیدیسم وضعیتی است که در آن تولید هورمون‌های تیروئیدی بیش از حد مجاز بوده و شایع‌ترین علت بروز آن، بیماری خودایمنی <strong class="em2">گریوز (Graves' Disease)</strong> است.
+    </p>
+    <p>
+      در بیماری گریوز، سیستم ایمنی بدن به اشتباه آنتی‌بادی محرک تیروئید به نام <strong class="em2">TRAb (Thyroid Receptor Antibody)</strong> را علیه گیرنده‌های TSH روی سلول‌های تیروئید تولید می‌کند. آنتی‌بادی TRAb با چسبیدن به گیرنده‌ها، دقیقاً عملکرد هورمون TSH را شبیه‌سازی کرده و دائماً غده تیروئید را وادار به تکثیر سلولی و ترشح بیش از حد هورمون‌های T3 و T4 می‌کند.
+    </p>
+
+    <h4>علائم و نشانه‌های بالینی هایپرتیروئیدیسم بالینی</h4>
+    <div class="grid2">
+      <div class="mini-card mc-green">
+        <h5>علائم سابجکتیو (شکایت بیمار)</h5>
+        <ul class="list-styled green">
+          <li><span class="li-content">تعریق شدید پوست و عدم تحمل شدید گرما</span></li>
+          <li><span class="li-content">کاهش شدید وزن (توضیح: در جوانان ممکن است به علت افزایش جبرانی اشتها رخ ندهد)</span></li>
+          <li><span class="li-content">بی‌قراری، تحریک‌پذیری عصبی مفرط و اضطراب شدید</span></li>
+          <li><span class="li-content">تپش قلب بالا و افزایش تعداد دفعات اجابت مزاج</span></li>
+          <li><span class="li-content">آمنوره (قطع قاعدگی در خانم‌ها) و اختلال نعوظ در آقایان</span></li>
+        </ul>
+      </div>
+      <div class="mini-card mc-orange">
+        <h5>نشانه‌های عینی در معاینه پزشک</h5>
+        <ul class="list-styled orange">
+          <li><span class="li-content"><strong>پوست:</strong> لمس گرم و بسیار مرطوب (برخلاف پوست خشک هایپوتیروئیدی)</span></li>
+          <li><span class="li-content"><strong>مو و ناخن:</strong> موهای بسیار نازک و شکننده؛ پدیده <strong class="em">Onycholysis</strong> (جدا شدن بی‌درد ناخن از بستر)</span></li>
+          <li><span class="li-content"><strong>چشم‌ها:</strong> بیرون‌زدگی حدقه چشم (<strong class="em">Exophthalmos</strong>)</span></li>
+          <li><span class="li-content"><strong>قلب:</strong> تاکی‌کاردی در زمان استراحت (Resting Tachycardia)</span></li>
+          <li><span class="li-content"><strong>غده تیروئید:</strong> بزرگ شدن یکنواخت غده (<strong class="em">Diffuse Goiter</strong>) به علت تحریک رشد سلولی توسط TRAb</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>چهار تظاهر کلاسیک بیماری گریوز</h4>
+    <div class="kv-row">
+      <span class="kv-key">۱. هایپرتیروئیدیسم:</span>
+      <span class="kv-value">تقریباً در ۱۰۰ درصد بیماران دیده می‌شود و علائمی چون لرزش دست، تپش قلب و اضطراب دارد.</span>
+    </div>
+    <div class="kv-row">
+      <span class="kv-key">۲. گواتر منتشر (Goiter):</span>
+      <span class="kv-value">بزرگ شدن منتشر و معمولاً بدون درد غده تیروئید به دلیل تحریک مداوم توسط آنتی‌بادی TRAb.</span>
+    </div>
+    <div class="kv-row">
+      <span class="kv-key">۳. بیماری چشمی (Orbitopathy):</span>
+      <span class="kv-value">شامل بیرون‌زدگی چشم، خشکی شدید قرنیه، دوبینی و احساس فشار شدید در پشت چشم‌ها که به تشخیص افتراقی گریوز کمک شایانی می‌کند.</span>
+    </div>
+    <div class="kv-row">
+      <span class="kv-key">۴. میکسدم پره‌تیبیال (Pretibial Myxedema):</span>
+      <span class="kv-value">ضخیم و متورم شدن پوست ناحیه جلوی ساق پا (یک نشانه اختصاصی اما کم‌تکرار بالینی).</span>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 8 ===================== -->
+  <div class="section-header sh-purple" id="sec-treatment-beta">
+    <div class="icon">🟣</div>
+    <span>۸. رویکرد درمانی اول: بتابلاکرها (Beta-blockers)</span>
+  </div>
+
+  <div class="subsection sub-purple">
+    <h4>نقش بتابلاکرها در کنترل نشانه‌های بیماری</h4>
+    <p>
+      بتابلاکرها (Adrenergic Blockers) اثری بر روی میزان ساخت هورمون‌های تیروئیدی ندارند، اما به سرعت علائم ناشی از تحریک سمپاتیک را تخفیف می‌دهند.
+    </p>
+
+    <div class="infobox ib-blue">
+      <span class="ib-icon">ℹ️</span>
+      <div>
+        <strong>کنترل فوری علائم:</strong> به محض تشخیص پرکاری تیروئید، در صورتی که بیمار منع مصرف دارویی نداشته باشد (مانند آسم بسیار شدید یا نارسایی حاد قلبی خاص)، تجویز بتابلاکر باید بلافاصله برای تسکین علائم آغاز شود.
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="mini-card mc-blue">
+        <h5>داروی انتخابی رفرنس: آتنولول (Atenolol)</h5>
+        <ul class="list-styled green">
+          <li><span class="li-content"><strong>دوز معمول:</strong> ۲۵ تا ۵۰ میلی‌گرم روزانه به صورت تک‌دوز.</span></li>
+          <li><span class="li-content"><strong>مزیت اصلی:</strong> یک‌بار مصرف در روز (کمک به پایبندی بیمار) و اثر انتخابی بر روی گیرنده‌های بتا-۱ قلبی که ریسک عوارض ریوی کمتری دارد.</span></li>
+        </ul>
+      </div>
+      <div class="mini-card mc-purple">
+        <h5>داروی جایگزین: پروپرانولول (Propranolol)</h5>
+        <p>پروپرانولول و آتنولول علاوه بر مهار تاکی‌کاردی، تعریق مفرط و لرزش دست، مهار نسبی تبدیل بافتی و محیطی T4 به T3 را نیز انجام می‌دهند، هر چند این اثر از نظر بالینی خیلی برجسته نیست.</p>
+      </div>
+    </div>
+
+    <div class="infobox ib-green">
+      <span class="ib-icon">🍃</span>
+      <div>
+        <strong>درمان ترکیبی:</strong> بر اساس شواهد بالینی، استفاده همزمان از بتابلاکرها به همراه داروی ضد تیروئید اصلی (تیونامید) در مقایسه با مصرف تنهای ضد تیروئید، خستگی‌پذیری (Fatigability) بیمار را به شدت کاهش داده و تنگی نفس (Shortness of breath) او را به سرعت بهبود می‌بخشد.
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 9 ===================== -->
+  <div class="section-header sh-red" id="sec-thionamides">
+    <div class="icon">🔴</div>
+    <span>۹. رویکرد درمانی دوم: داروهای ضدتیروئید تیونامید (Thionamides)</span>
+  </div>
+
+  <div class="subsection sub-red">
+    <h4>معرفی داروها و مکانیسم عمل تیونامیدها</h4>
+    <p>
+      این دسته از داروها مهار تولید هورمون‌های جدید را برعهده دارند. دو داروی اصلی این گروه که در نسخ تجویز می‌شوند عبارتند از:
+    </p>
+    <ul class="list-styled red">
+      <li><span class="li-content"><strong>متی‌مازول (Methimazole):</strong> داروی استاندارد، طلایی و خط اول درمان پرکاری تیروئید.</span></li>
+      <li><span class="li-content"><strong>پروپیل‌تیوراسیل (Propylthiouracil / PTU):</strong> داروی تخصصی با کاربرد محدود در شرایط خاص بالینی.</span></li>
+      <li><span class="li-content"><strong>کاربی‌مازول (Carbimazole):</strong> یک پیش‌دارو (Prodrug) که پس از مصرف در بدن بیمار به طور کامل به متی‌مازول تبدیل می‌گردد.</span></li>
+    </ul>
+
+    <div class="infobox ib-yellow">
+      <span class="ib-icon">⚠️</span>
+      <div>
+        <strong>بزرگترین نقطه ضعف تیونامیدها:</strong> این داروها هیچ اثری بر روی ذخایر هورمون‌های تیروئیدی که از قبل ساخته شده و درون تیروگلوبولین ذخیره شده‌اند، ندارند؛ بلکه فقط مانع سنتز هورمون جدید می‌شوند.
+      </div>
+    </div>
+
+    <div class="kv-row">
+      <span class="kv-key">بازه شروع اثر بالینی:</span>
+      <span class="kv-value">به دلیل عدم اثر روی هورمون‌های ذخیره‌شده قبلی، <strong class="em">۴ تا ۶ هفته</strong> طول می‌کشد تا ذخایر قبلی غده تخلیه شده و اثرات درمانی دارو نمایان شود.</span>
+    </div>
+    <div class="kv-row">
+      <span class="kv-key">درمان کمکی (Bridge Therapy):</span>
+      <span class="kv-value">در این بازه زمانی ۴ تا ۶ هفته نخست، بیمار باید حتماً بتابلاکر مصرف کند تا علائم کنترل شوند و تیونامیدها فرصت کافی برای کاهش سطوح هورمونی داشته باشند.</span>
+    </div>
+
+    <h4>چرا متی‌مازول داروی انتخابی و برتر درمان است؟</h4>
+    <ol style="margin-right: 20px; font-size: 14px; line-height: 2;">
+      <li><strong>عوارض جانبی کمتر:</strong> متی‌مازول ریسک سمیت کبدی شدید (Hepatotoxicity) بسیار کمتری در مقایسه با PTU دارد.</li>
+      <li><strong>سرعت اثربخشی بالاتر:</strong> با سرعت بیشتری وضعیت متابولیسم را کنترل کرده و بیمار را یوتیروئید می‌کند.</li>
+      <li><strong>امکان مصرف یک‌بار در روز (Once daily):</strong> ماندگاری بهتری در بافت دارد و به دلیل دوزینگ ساده‌تر، پایبندی (Compliance) بیمار را بسیار ارتقا می‌دهد.</li>
+    </ol>
+
+    <div class="infobox ib-teal">
+      <span class="ib-icon">🔧</span>
+      <div>
+        <strong>مدیریت عوارض گوارشی آغازین:</strong> در ابتدای درمان با دوزهای بالای متی‌مازول، عوارض گوارشی شایع است. پزشک دوز روزانه را به صورت منقسم (Divided) تجویز می‌کند و پس از مدتی که در بیمار تحمل (Tolerance) ایجاد شد، دوز را به صورت یک‌بار در روز (Once daily) تغییر می‌دهد.
+      </div>
+    </div>
+
+    <h4>تداخل با درمان ید رادیواکتیو (Radioactive Iodine)</h4>
+    <p>
+      برای افزایش موفقیت درمان با ید رادیواکتیو، بیمار باید قبل از آن یوتیروئید شود. راهکار بالینی این است که ۱ تا ۲ ماه قبل از تجویز ید رادیواکتیو، به بیمار تیونامید داده شود تا وضعیت تیروئید نرمال گردد.
+    </p>
+    <ul class="list-styled red">
+      <li><span class="li-content"><strong>داروی PTU:</strong> تداخلات شدیدی با ید رادیواکتیو داشته و احتمال شکست درمان رادیواکتیو را به میزان زیادی بالا می‌برد.</span></li>
+      <li><span class="li-content"><strong>داروی متی‌مازول:</strong> تداخل به مراتب کمتری با ید رادیواکتیو نشان می‌دهد و انتخاب ایمن‌تری است.</span></li>
+    </ul>
+
+    <h4>پروتکل درمانی در دوران بارداری</h4>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>دوره بارداری</th>
+            <th>داروی انتخابی</th>
+            <th>علت بیولوژیک و ترجیح بالینی</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>سه ماهه اول بارداری</strong></td>
+            <td><strong class="em3">پروپیل‌تیوراسیل (PTU)</strong></td>
+            <td>داروی متی‌مازول به شدت تراتوژن بوده و ریسک بروز ناهنجاری ساختاری جنین نظیر <strong class="em">Aplasia Cutis</strong> (عدم تشکیل بخشی از پوست سر جنین) را بالا می‌برد. با وجود ریسک سمیت کبدی، ترجیح با PTU است.</td>
+          </tr>
+          <tr>
+            <td><strong>سه ماهه دوم و سوم بارداری</strong></td>
+            <td><strong class="em2">متی‌مازول (Methimazole)</strong></td>
+            <td>پس از اتمام دوره ارگانوژنز اولیه در انتهای سه ماهه اول، ریسک تراتوژنیسیتی کاهش می‌یابد. به منظور محافظت از کبد مادر در برابر سمیت شدید کبدی ناشی از PTU، دارو به متی‌مازول تغییر داده می‌شود.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>طبقه‌بندی عوارض جانبی تیونامیدها</h4>
+    <div class="grid2">
+      <div class="mini-card mc-blue">
+        <h5>۱. عوارض خفیف (Mild Side Effects)</h5>
+        <p>شامل خارش، راش پوستی خفیف، درد مفاصل (Arthralgia) و تب (Fever) است. این عوارض بیشتر در دوزهای بالا و در کودکان دیده می‌شوند.</p>
+        <ul class="list-styled green">
+          <li><span class="li-content">اگر راش و خارش مختصر باشد، از <strong class="em2">آنتی‌هیستامین</strong> استفاده می‌شود.</span></li>
+          <li><span class="li-content">اگر راش با تب همراه شد (شک به عوارض سیستمیک)، مصرف دارو فوراً متوقف می‌شود.</span></li>
+          <li><span class="li-content">به دلیل واکنش متقاطع (Cross-reactivity) ۵۰ درصدی بین دو دارو، در صورت عارضه خفیف با یکی از داروها، می‌توان دارو را به تیونامید دیگر تغییر داد.</span></li>
+        </ul>
+      </div>
+      <div class="mini-card mc-red">
+        <h5>۲. عوارض شدید (Severe Side Effects)</h5>
+        <p>در صورت بروز هرگونه عارضه شدید با یکی از داروها، تغییر به تیونامید دیگر <strong class="em">به هیچ وجه مجاز نبوده</strong> و مصرف کل این دسته دارویی باید فوراً قطع شود.</p>
+        <ul class="list-styled red">
+          <li><span class="li-content"><strong>آگرانولوسیتوز (Agranulocytosis):</strong> عارضه حاد و بسیار خطرناک (بیشترین ریسک در ۳ ماهه اول درمان). به دلیل آغاز ناگهانی، مانیتورینگ دوره‌ای CBC برای پیش‌بینی آن کارایی ندارد.</span></li>
+          <li><span class="li-content"><strong>اقدام فوری در آگرانولوسیتوز:</strong> قطع فوری دارو و تزریق فاکتور محرک کلونی گرانولوسیت (<strong class="em2">G-CSF</strong>). ادامه درمان تیروئید فقط با جراحی یا ید رادیواکتیو مجاز است.</span></li>
+          <li><span class="li-content"><strong>سمیت کبدی (Hepatotoxicity):</strong> با هر دو دارو رخ می‌دهد ولی با PTU شایع‌تر و وخیم‌تر است.</span></li>
+          <li><span class="li-content"><strong>سندروم شبه لوپوس (Lupus-like):</strong> عارضه تاخیری (شروع پس از ۶ ماه) با مثبت شدن آنتی‌بادی ANA، اما بدون درگیری ارگان‌های حیاتی نظیر کلیه.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>آزمایش‌های اجباری پیش از شروع درمان (Pre-treatment Screening)</h4>
+    <div class="kv-row">
+      <span class="kv-key">۱. آزمایش CBC (بررسی گلبول‌های سفید):</span>
+      <span class="kv-value">اگر سطح پایه گلبول‌های سفید نوزاد یا بیمار از ابتدا پایین باشد، شروع درمان با تیونامیدها به علت تشدید ریسک نوتروپنی توصیه نمی‌شود.</span>
+    </div>
+    <div class="kv-row">
+      <span class="kv-key">۲. آزمایش LFT (بررسی عملکرد کبد):</span>
+      <span class="kv-value">در صورتی که در شروع درمان، آنزیم‌های کبدی بیمار <strong class="em">بیشتر از ۵ برابر حد نرمال (5x ULN)</strong> باشند، شروع درمان با داروهای تیونامید ممنوع است.</span>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 10 ===================== -->
+  <div class="section-header sh-cyan" id="sec-iodine">
+    <div class="icon">🔵</div>
+    <span>۱۰. کاربرد ترکیبات ید (Iodine) و داروهای کمکی و تکمیلی در هایپرتیروئیدیسم</span>
+  </div>
+
+  <div class="subsection sub-cyan">
+    <h4>کاربرد کلینیکی و مکانیسم اثر ید در پرکاری تیروئید</h4>
+    <p>
+      فرآورده‌های حاوی ید پس از شروع دارودرمانی برای کنترل سریع علائم تا آغاز اثرگذاری داروهای اصلی و همچنین پیش از عمل جراحی تیروئید کاربرد دارند.
+    </p>
+
+    <div class="mini-card mc-teal">
+      <h5>سه مکانیسم بیولوژیک ید در دوز بالا</h5>
+      <ul class="list-styled teal">
+        <li><span class="li-content">مهار فیزیکی آزادسازی هورمون‌های ساخته‌شده قبلی از غده تیروئید.</span></li>
+        <li><span class="li-content">جلوگیری از فرآیند ارگانیفیکاسیون (Organification) و مهار ساخت هورمون جدید.</span></li>
+        <li><span class="li-content"><strong>کاهش اندازه و کاهش خون‌رسانی (Vascularity) غده تیروئید:</strong> این اثر مهم‌ترین دلیل تجویز ید پیش از عمل جراحی است؛ زیرا با کوچک و کم‌خون شدن تیروئید، ریسک خونریزی حین عمل جراحی به شدت کاهش می‌یابد.</span></li>
+      </ul>
+    </div>
+
+    <div class="infobox ib-yellow">
+      <span class="ib-icon">⚠️</span>
+      <div>
+        <strong>پدیده فرار (Escape Phenomenon):</strong> ید اثر درمانی بسیار سریعی دارد، اما پس از حدود <strong class="em">۲ هفته</strong> غده تیروئید مقاومت نشان داده و با مهار انتقال فعال، اثر ید را خنثی می‌کند. بنابراین استفاده بلندمدت از فرآورده‌های یددار ممنوع است.
+      </div>
+    </div>
+
+    <h4>بررسی فرآورده‌های دارویی حاوی ید</h4>
+    <div class="kv-row">
+      <span class="kv-key">۱. محلول SSKI (پتاسیم یدید سیرشده):</span>
+      <span class="kv-value">حاوی <strong class="em2">۵۰ میلی‌گرم ید در هر قطره</strong> است. به دلیل دوزینگ مناسب و حجم مصرفی کم، انتخاب اول پزشکان است. دوز درمانی روزانه حدود ۵۰۰ میلی‌گرم (معادل ۱۰ قطره) است.</span>
+    </div>
+    <div class="kv-row">
+      <span class="kv-key">۲. محلول لوگول (Lugol's):</span>
+      <span class="kv-value">حاوی <strong class="em">۶ میلی‌گرم ید در هر قطره</strong> است. در ایران موجود است اما بیمار ناچار است حجم بسیار زیادی از دارو را مصرف کند و ترجیح داده نمی‌شود.</span>
+    </div>
+    <div class="kv-row">
+      <span class="kv-key">۳. مواد حاجب یددار:</span>
+      <span class="kv-value">در درمان پرکاری تیروئید کاربرد دارند، اما به دلیل قیمت بسیار بالا در بازار دارویی ایران جایگاهی ندارند.</span>
+    </div>
+
+    <div class="infobox ib-red">
+      <span class="ib-icon">🚨</span>
+      <div>
+        <strong>تداخل زمانی با ید رادیواکتیو:</strong> قبل از درمان با ید رادیواکتیو به هیچ عنوان نباید فرآورده‌های یددار به بیمار داده شود؛ زیرا با اشباع غده، مانع جذب ید رادیواکتیو می‌شوند. پس از دریافت ید رادیواکتیو، شروع فرآورده‌های یددار باید حداقل <strong class="em">۳ تا ۷ روز</strong> به تاخیر بیفتد.
+      </div>
+    </div>
+
+    <h4>بررسی داروهای کمکی و تکمیلی (Complementary Therapy)</h4>
+    <p>این داروها نقش کمکی داشته و هرگز درمان اصلی به شمار نمی‌روند:</p>
+    <ul class="list-styled purple">
+      <li><span class="li-content"><strong>گلوکوکورتیکوئیدها (Glucocorticoids):</strong> مهار تبدیل محیطی T4 به T3 فعال را بر عهده دارند و ترشح هورمون‌ها را کاهش می‌دهند.</span></li>
+      <li><span class="li-content"><strong>لیتیوم (Lithium):</strong> به دلیل شباهت ساختاری به ید، فرآیند آزادسازی هورمون‌ها را بلوکه می‌کند. به علت پنجره درمانی باریک و عوارض جانبی متعدد، امروزه کاربردی در تیروئید ندارد.</span></li>
+      <li><span class="li-content"><strong>کلستیرامین (Cholestyramine):</strong> یک رزین متصل‌شونده به اسیدهای صفراوی است. دوز <strong class="em">۴ گرم به صورت ۴ بار در روز</strong> در کنار متی‌مازول اثر درمانی را افزایش می‌دهد.</span></li>
+      <li><span class="li-content"><strong>ال-کارنیتین (L-Carnitine):</strong> فرآورده‌ای طبیعی است که اثرات هورمون‌های تیروئیدی را در سطح بافت‌ها آنتاگونیزه (بلوکه) می‌کند.</span></li>
+      <li><span class="li-content"><strong>ریتوکسیمب (Rituximab):</strong> آنتی‌بادی منحصربه‌فرد علیه سلول‌های B که میزان آنتی‌بادی تحریک‌کننده تیروئید را کم می‌کند، اما قیمت بالا و عوارض شدید مانع از مصرف عمومی آن شده است.</span></li>
+    </ul>
+  </div>
+
+</div> <!-- END MAIN -->
+
+<!-- ===================== FOOTER ===================== -->
+<div class="footer">
+  <p>طراحی و توسعه تخصصی توسط پلتفرم هوشمند آموزشی فارماکولوژی</p>
+  <p>تمامی حقوق علمی برای گروه ۵ فارما محفوظ است. ۱۴۰۵</p>
+</div>
+
+<!-- ===== نوار شناور ابزار چند پلتفرمی ===== -->
+<div id="highlight-panel">
+  <span>🖍️ ابزار مطالعه:</span>
+  <button class="hl-btn hl-btn-yellow" onclick="applyColorHighlight('#fff59d')" title="زرد"></button>
+  <button class="hl-btn hl-btn-green" onclick="applyColorHighlight('#c8e6c9')" title="سبز"></button>
+  <button class="hl-btn hl-btn-blue" onclick="applyColorHighlight('#bbdefb')" title="آبی"></button>
+  <button class="hl-btn hl-btn-pink" onclick="applyColorHighlight('#f8bbd0')" title="صورتی"></button>
+  <button class="panel-action-btn" onclick="addNoteAtSelection()">📝 یادداشت</button>
+  <button class="panel-action-btn" onclick="viewAllNotes()">🔍 لیست یادداشت‌ها</button>
+  <button class="panel-action-btn panel-action-btn-red" onclick="clearSelectedHighlight()">❌ پاک‌کردن</button>
+  <button class="panel-action-btn" style="background:#2e7d32;" onclick="exportModifiedHTML()">📥 خروجی گرفتن از فایل</button>
+</div>
+
+<!-- پنجره مودال ثبت/ویرایش یادداشت -->
+<div class="modal-overlay" id="note-edit-modal">
+  <div class="modal-card">
+    <h4 id="modal-title">ثبت یادداشت جدید در این محل</h4>
+    <textarea class="modal-textarea" id="modal-note-input" placeholder="نکته مهم کلاسی خود را جهت مرور سریع بنویسید..."></textarea>
+    <div class="modal-actions">
+      <button class="btn btn-primary" onclick="saveNoteChanges()">💾 ذخیره تغییرات</button>
+      <button class="btn btn-danger" id="btn-delete-note" onclick="deleteActiveNote()">❌ حذف یادداشت</button>
+      <button class="btn btn-secondary" onclick="closeNoteModal()">انصراف</button>
+    </div>
+  </div>
+</div>
+
+<!-- پنجره مودال لیست همه‌ی یادداشت‌ها -->
+<div class="modal-overlay" id="all-notes-modal">
+  <div class="modal-card" style="max-height: 80%; overflow-y: auto; max-width: 600px;">
+    <h4>📋 تمام یادداشت‌های ثبت‌شده شما</h4>
+    <div id="all-notes-list" style="margin-bottom: 20px;">
+      <!-- لیست پویا به صورت خودکار پر خواهد شد -->
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-secondary" onclick="closeAllNotesModal()">بستن پنجره</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const storageStateKey = "gi_pharma_session6_interactive_state";
+  let savedRange = null; 
+  let activeMarker = null;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    loadPageState();
+  });
+
+  function savePageState() {
+    const mainHTML = document.querySelector('.main').innerHTML;
+    localStorage.setItem(storageStateKey, mainHTML);
+  }
+
+  function loadPageState() {
+    const savedHTML = localStorage.getItem(storageStateKey);
+    if (savedHTML) {
+      document.querySelector('.main').innerHTML = savedHTML;
+    }
+  }
+
+  function applyColorHighlight(colorHex) {
+    const selection = window.getSelection();
+    if (!selection.rangeCount || selection.isCollapsed) {
+      alert("لطفاً ابتدا متنی از جزوه را با ماوس یا لمس طولانی انتخاب کنید.");
+      return;
+    }
+
+    const main = document.querySelector('.main');
+    const originalEditable = main.contentEditable;
+    
+    main.contentEditable = "true";
+    
+    try {
+      document.execCommand("styleWithCSS", false, true);
+      document.execCommand("backColor", false, colorHex);
+    } catch (e) {
+      console.error("خطای هایلایت:", e);
+    }
+    
+    main.contentEditable = originalEditable;
+    selection.removeAllRanges();
+    savePageState();
+  }
+
+  function clearSelectedHighlight() {
+    applyColorHighlight('transparent');
+  }
+
+  function addNoteAtSelection() {
+    const selection = window.getSelection();
+    if (!selection.rangeCount || selection.isCollapsed) {
+      alert("لطفاً ابتدا بخشی از متن را با کشیدن انگشت یا ماوس انتخاب کنید تا یادداشت به آنجا متصل شود.");
+      return;
+    }
+
+    savedRange = selection.getRangeAt(0).cloneRange();
+    
+    activeMarker = null; 
+    document.getElementById("modal-title").innerText = "ثبت یادداشت جدید در این محل";
+    document.getElementById("modal-note-input").value = "";
+    document.getElementById("btn-delete-note").style.display = "none";
+    document.getElementById("note-edit-modal").style.display = "flex";
+  }
+
+  function saveNoteChanges() {
+    const text = document.getElementById("modal-note-input").value.trim();
+    if (!text) {
+      alert("لطفاً متن یادداشت را وارد کنید.");
+      return;
+    }
+
+    if (activeMarker === null) {
+      if (savedRange) {
+        const marker = document.createElement("span");
+        marker.className = "note-marker";
+        marker.setAttribute("data-note", text);
+        marker.innerHTML = `📝<span class="note-tooltip">${escapeHTML(text)}</span>`;
+        marker.contentEditable = "false";
+        
+        try {
+          savedRange.collapse(false);
+          savedRange.insertNode(marker);
+        } catch (e) {
+          console.error("Error inserting marker:", e);
+          alert("امکان درج یادداشت در این بخش به دلیل تداخل تگ‌ها وجود ندارد. لطفا متن ساده‌تری را انتخاب کنید.");
+        }
+        savedRange = null;
+      } else {
+        alert("محدوده متن انتخاب شده معتبر نیست. لطفاً مجدداً متن را انتخاب کنید.");
+        return;
+      }
+    } else {
+      activeMarker.setAttribute("data-note", text);
+      activeMarker.innerHTML = `📝<span class="note-tooltip">${escapeHTML(text)}</span>`;
+    }
+
+    closeNoteModal();
+    savePageState();
+  }
+
+  function deleteActiveNote() {
+    if (activeMarker && confirm("آیا مایل به حذف این یادداشت هستید؟")) {
+      activeMarker.remove();
+      closeNoteModal();
+      savePageState();
+    }
+  }
+
+  function closeNoteModal() {
+    document.getElementById("note-edit-modal").style.display = "none";
+    activeMarker = null;
+    savedRange = null;
+  }
+
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("note-marker")) {
+      activeMarker = e.target;
+      const savedText = activeMarker.getAttribute("data-note") || "";
+      document.getElementById("modal-title").innerText = "مشاهده و ویرایش یادداشت";
+      document.getElementById("modal-note-input").value = savedText;
+      document.getElementById("btn-delete-note").style.display = "inline-block";
+      document.getElementById("note-edit-modal").style.display = "flex";
+    }
+  });
+
+  function viewAllNotes() {
+    const markers = document.querySelectorAll(".note-marker");
+    const listContainer = document.getElementById("all-notes-list");
+    listContainer.innerHTML = "";
+
+    if (markers.length === 0) {
+      listContainer.innerHTML = '<p style="text-align:center; color:var(--muted); font-size:14px; padding:20px 0;">هیچ یادداشتی در کل متن ثبت نشده است.</p>';
+      document.getElementById("all-notes-modal").style.display = "flex";
+      return;
+    }
+
+    markers.forEach((marker, index) => {
+      const noteText = marker.getAttribute("data-note") || "";
+      const context = marker.previousSibling ? marker.previousSibling.textContent.slice(-35) : "...";
+      
+      const card = document.createElement("div");
+      card.className = "mini-card mc-blue";
+      card.style.marginBottom = "12px";
+      card.innerHTML = `
+        <div style="font-size:11px; color:var(--muted); margin-bottom:5px;">یادداشت شماره ${index + 1} (متن مجاور: "...${escapeHTML(context)}")</div>
+        <div style="font-weight:bold; font-size:14px; line-height:1.6; white-space:pre-wrap; color:var(--text);">${escapeHTML(noteText)}</div>
+        <div style="margin-top:10px; display:flex; gap:8px;">
+          <button onclick="scrollToMarker(${index})" class="tag tag-blue" style="border:none; cursor:pointer; padding:4px 10px;">🔍 پرش به محل یادداشت</button>
+          <button onclick="deleteMarkerFromList(${index})" class="tag tag-red" style="border:none; cursor:pointer; padding:4px 10px;">❌ حذف</button>
+        </div>
+      `;
+      listContainer.appendChild(card);
+    });
+
+    document.getElementById("all-notes-modal").style.display = "flex";
+  }
+
+  window.scrollToMarker = function(index) {
+    const markers = document.querySelectorAll(".note-marker");
+    if (markers[index]) {
+      closeAllNotesModal();
+      markers[index].scrollIntoView({ behavior: "smooth", block: "center" });
+      
+      const originalBg = markers[index].style.backgroundColor;
+      markers[index].style.backgroundColor = "#ff5252";
+      markers[index].style.transform = "scale(1.4)";
+      
+      setTimeout(() => {
+        markers[index].style.backgroundColor = originalBg;
+        markers[index].style.transform = "scale(1)";
+      }, 1500);
+    }
+  };
+
+  window.deleteMarkerFromList = function(index) {
+    if (confirm("آیا مایل به حذف این یادداشت هستید؟")) {
+      const markers = document.querySelectorAll(".note-marker");
+      if (markers[index]) {
+        markers[index].remove();
+        savePageState();
+        viewAllNotes(); 
+      }
+    }
+  };
+
+  function exportModifiedHTML() {
+    const docClone = document.cloneNode(true);
+    const currentMainHTML = document.querySelector('.main').innerHTML;
+    docClone.querySelector('.main').innerHTML = currentMainHTML;
+    
+    const htmlString = '<!DOCTYPE html>\n' + docClone.documentElement.outerHTML;
+    
+    const blob = new Blob([htmlString], { type: "text/html;charset=utf-8" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "pharmacology_session6_interactive_output.html";
+    link.click();
+  }
+
+  function closeAllNotesModal() {
+    document.getElementById("all-notes-modal").style.display = "none";
+  }
+
+  function escapeHTML(str) {
+    return str.replace(/[&<>'"]/g, 
+      tag => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;'
+      }[tag] || tag)
+    );
+  }
+</script>
+
+</body>
+</html>
